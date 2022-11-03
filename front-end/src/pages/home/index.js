@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Button, Modal } from 'react-bootstrap';
 import Header2 from '../../components/Header2';
+import { useNavigate } from 'react-router-dom';
 import Status from '../../components/Status';
 import Card from '../../components/card';
 import api from '../../service';
@@ -10,8 +11,11 @@ export default function Home() {
   const [users, setUsers] = useState([]);
   const [show, setShow] = useState(false);
   const [id, setId] = useState(null);
+  const navigate = useNavigate();
 
-  function editUser() {}
+  function editUser(id) {
+    navigate(`/editar/${id}`);
+  }
 
   function handleShow() {
     setShow(true);

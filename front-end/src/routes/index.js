@@ -9,7 +9,8 @@ export const Routers = () => {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/repositories/:owner/:repo" element={<Registration />} />
+      <Route path="/editar" element={<Registration />} />
+      <Route path="/editar/:id" element={<Registration />} />
     </Routes>
   );
 };
