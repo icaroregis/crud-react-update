@@ -3,7 +3,8 @@ import './styles.css';
 
 const Status = ({ status }) => {
   const alteraStatus = () => {
-    return status === 'aguardando ativação' ? 'aguardando' : status;
+    // return status === 'aguardando ativação' ? 'aguardando' : status;
+    return status;
   };
 
   return (

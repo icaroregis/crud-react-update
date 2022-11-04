@@ -13,7 +13,7 @@
       "email": "amon.cruz@gmail.com",
       "CPF": "123465789",
       "telefone": "1324657489",
-      "status": "ativo",
+      "status": "inativo",
       "id": 4
     },
     {
@@ -21,7 +21,7 @@
       "email": "crisanto.almeida@gmail.com",
       "CPF": "05378937337",
       "telefone": "123457",
-      "status": "ativo",
+      "status": "aguardando ativação",
       "id": 5
     },
     {
@@ -37,7 +37,7 @@
       "email": "teste@teste",
       "CPF": "763.988.983",
       "telefone": "012345",
-      "status": "",
+      "status": "aguardando ativação",
       "id": 6
     }
   ]
