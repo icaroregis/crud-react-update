@@ -75,3 +75,13 @@
   flex-direction: column;
   justify-content: space-between;
 }
+
+@media (max-width: 1076px) {
+  .section-cadastro { 
+    padding: 0 10px;
+  }
+
+  .button-cadastro {
+    width: 100px; 
+  }
+}

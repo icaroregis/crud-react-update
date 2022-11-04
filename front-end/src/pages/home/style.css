@@ -11,6 +11,10 @@
   margin-bottom: 30px; 
 }
 
+.clients p {
+  color: #666666; 
+}
+
 .section-buttons {
   display: flex;
   align-items: center;
@@ -87,4 +91,14 @@
   padding: 10px;
   width: 300px;
   margin-bottom: 10px;
+}
+
+@media (max-width: 1076px) {
+  .container-content {
+    padding: 0 10px;
+  }
+
+  .section-padrao { 
+    width: 100%; 
+  }
 }

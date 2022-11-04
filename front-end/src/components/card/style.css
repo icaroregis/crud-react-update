@@ -4,7 +4,7 @@
   border-radius: 10px; 
   border: 1px solid black;
   display: flex; 
-  flex-flow: row nowrap; 
+  flex-direction: row;  
   align-items: center;
   justify-content: space-around;
   margin-bottom: 10px;
@@ -13,4 +13,12 @@
 
 .card:hover {
   transform: translateX(4px); 
+}
+
+@media (max-width: 974px) { 
+  .card {
+    flex-direction: column; 
+    height: 200px;  
+    padding: 5px 5px; 
+  }
 }

@@ -23,14 +23,6 @@
       "telefone": "(85) 992954545",
       "status": "aguardando ativação",
       "id": 3
-    },
-    {
-      "nome": "Thayna Almeida",
-      "email": "teste@gmail.com",
-      "cpf": "000.000.000-00",
-      "telefone": "00 0000-0000",
-      "status": "ativo",
-      "id": 4
     }
   ]
 }

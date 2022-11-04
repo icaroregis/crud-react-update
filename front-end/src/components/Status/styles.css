@@ -24,5 +24,11 @@
 
 .status-bolinha {
   display: flex;
-  align-items: center;
+  align-items: center; 
+}
+
+@media (max-width: 974px) {
+  .status-bolinha {
+    justify-content: center;
+  }
 }
