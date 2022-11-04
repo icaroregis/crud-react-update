@@ -5,6 +5,11 @@ Crud construído com React Js. Foram utilizadas os seguintes métodos:
 2. Hooks
 3. React Router Dom 
 4. Formulários reativos
+5. React Bootstrap
+6. Axios
+7. Componentização
+8. Lógica para gerenciar status do usuário.
+9. Navigate, Params
 
 # CRUD-REACT
 
