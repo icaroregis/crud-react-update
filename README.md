@@ -1,5 +1,10 @@
 # crud-react-update
-Crud react
+Crud construído com React Js. Foram utilizadas os seguintes métodos:
+
+1. Renderização condicional
+2. Hooks
+3. React Router Dom 
+4. Formulários reativos
 
 # CRUD-REACT
 
