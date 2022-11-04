@@ -10,11 +10,11 @@ import './style.css';
 export default function Home() {
   const [users, setUsers] = useState([]);
   const [show, setShow] = useState(false);
-  const [id, setId] = useState(null);
+  const [id, setId] = useState('');
   const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
-  const [cpf, setCpf] = useState(null);
-  const [telefone, setTelefone] = useState(null);
+  const [cpf, setCpf] = useState('');
+  const [telefone, setTelefone] = useState('');
   const [status, setStatus] = useState('');
   const navigate = useNavigate();
 
