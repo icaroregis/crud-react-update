@@ -13,6 +13,10 @@ export default function Home() {
   const [id, setId] = useState(null);
   const navigate = useNavigate();
 
+  function redirectRoute() {
+    navigate(`/editar`);
+  }
+
   function editUser(id) {
     navigate(`/editar/${id}`);
   }
@@ -57,7 +61,9 @@ export default function Home() {
 
         <div className="clients">
           <p>Escolha um cliente para visualizar os detalhes</p>
-          <button className="new-user-button">Novo Usuário</button>
+          <button onClick={redirectRoute} className="new-user-button">
+            Novo Usuário
+          </button>
         </div>
 
         {users &&
