@@ -3,42 +3,26 @@
     {
       "nome": "Marianne",
       "email": "mari.corada@gmail.com",
-      "CPF": "1346578",
-      "telefone": "13246574",
+      "cpf": "053.987.335-37",
+      "telefone": "(85) 992954545",
       "status": "ativo",
-      "id": 3
+      "id": 1
     },
     {
       "nome": "Amon De La Cruz  ",
       "email": "amon.cruz@gmail.com",
-      "CPF": "123465789",
-      "telefone": "1324657489",
+      "cpf": "053.987.335-37",
+      "telefone": "(85) 992954545",
       "status": "inativo",
-      "id": 4
+      "id": 2
     },
     {
       "nome": "Crisanto de Oliveira Paiva",
       "email": "crisanto.almeida@gmail.com",
-      "CPF": "05378937337",
-      "telefone": "123457",
+      "cpf": "053.987.335-37",
+      "telefone": "(85) 992954545",
       "status": "aguardando ativação",
-      "id": 5
-    },
-    {
-      "nome": "Marcos de Oliveira Paiva",
-      "email": "marcos.almeida@gmail.com",
-      "CPF": "05378937337",
-      "telefone": "123457",
-      "status": "ativo",
-      "id": 5
-    },
-    {
-      "nome": "Teste",
-      "email": "teste@teste",
-      "CPF": "763.988.983",
-      "telefone": "012345",
-      "status": "aguardando ativação",
-      "id": 6
+      "id": 3
     }
   ]
 }

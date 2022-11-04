@@ -11,6 +11,11 @@ export default function Home() {
   const [users, setUsers] = useState([]);
   const [show, setShow] = useState(false);
   const [id, setId] = useState(null);
+  const [nome, setNome] = useState('');
+  const [email, setEmail] = useState('');
+  const [cpf, setCpf] = useState(null);
+  const [telefone, setTelefone] = useState(null);
+  const [status, setStatus] = useState('');
   const navigate = useNavigate();
 
   function redirectRoute() {
@@ -30,7 +35,7 @@ export default function Home() {
   }
 
   async function deleteUser(id) {
-    await api.delete(`/galera/${id}`);
+    await api.delete(`/customers/${id}`);
 
     setUsers(
       users.filter((user) => {
@@ -43,10 +48,29 @@ export default function Home() {
   }
 
   useEffect(() => {
-    api.get('/customers').then((response) => {
-      setUsers(response.data).catch((error) => console.log(error));
-    });
+    api
+      .get('/customers')
+      .then((response) => {
+        setUsers(response.data);
+      })
+      .catch((err) => {
+        if (err) {
+          console.log(err);
+        }
+      });
   }, []);
+
+  useEffect(() => {
+    if (id) {
+      api.get(`customers/${id}`).then((response) => {
+        setNome(response.data.nome);
+        setEmail(response.data.email);
+        setCpf(response.data.cpf);
+        setTelefone(response.data.telefone);
+        setStatus(response.data.status);
+      });
+    }
+  }, [id]);
 
   return (
     <div>
@@ -66,50 +90,66 @@ export default function Home() {
           </button>
         </div>
 
-        {users &&
-          users.length > 0 &&
-          users.map((user) => {
-            return (
-              <Card>
-                <div key={user.id} className="section-padrao">
-                  <p>{user.nome}</p>
-                  <p>{user.email}</p>
-                </div>
-                <div className="section-padrao">
-                  <p>{user.cpf}</p>
-                  <p>{user.telefone}</p>
-                </div>
-                <div className="section-padrao">
-                  <Status status={user.status} />
-                </div>
-                <div className="section-buttons">
-                  <button
-                    onClick={() => editUser(user.id)}
-                    className="editar-button"
-                  >
-                    Editar
-                  </button>
+        {users && users.length > 0 ? (
+          <>
+            {users.map((user) => {
+              return (
+                <Card key={user.id}>
+                  <div className="section-padrao">
+                    <p>{user.nome}</p>
+                    <p>{user.email}</p>
+                  </div>
 
-                  <button
-                    onClick={() => {
-                      handleShow();
-                      setId(user.id);
-                    }}
-                    className="excluir-button"
-                  >
-                    Excluir
-                  </button>
-                </div>
-              </Card>
-            );
-          })}
+                  <div className="section-padrao">
+                    <p>{user.cpf}</p>
+                    <p>{user.telefone}</p>
+                  </div>
+
+                  <div className="section-padrao">
+                    <Status status={user.status} />
+                  </div>
+
+                  <div className="section-buttons">
+                    <button onClick={() => editUser(user.id)} className="editar-button">
+                      Editar
+                    </button>
+
+                    <button
+                      onClick={() => {
+                        handleShow();
+                        setId(user.id);
+                      }}
+                      className="excluir-button"
+                    >
+                      Excluir
+                    </button>
+                  </div>
+                </Card>
+              );
+            })}
+          </>
+        ) : (
+          <>
+            <h1>Não existem usuários para listar, cadastre um usuário para gerenciá-lo.</h1>
+          </>
+        )}
 
         <Modal show={show} onHide={handleClose}>
           <Modal.Header closeButton>
             <Modal.Title>Lista de Usuários</Modal.Title>
           </Modal.Header>
 
-          <Modal.Body>Tem certeza que deseja excluir esse Usuário?</Modal.Body>
+          <Modal.Body>
+            <strong>Tem certeza que deseja excluir esse Usuário?</strong>
+
+            <form className="section-cadastroThree">
+              <input required value={nome} onChange={({ target }) => setNome(target.value)} type="text" placeholder="Nome" disabled />
+              <input required value={email} onChange={({ target }) => setEmail(target.value)} type="text" placeholder="E-mail" disabled />
+              <input required value={cpf} onChange={({ target }) => setCpf(target.value)} type="text" placeholder="CPF" disabled />
+              <input required value={telefone} onChange={({ target }) => setTelefone(target.value)} type="text" placeholder="telefone" disabled />
+              <input required value={status} onChange={({ target }) => setStatus(target.value)} type="text" placeholder="status. por exemplo: ativo, inativo etc" disabled />
+            </form>
+          </Modal.Body>
 
           <Modal.Footer>
             <Button variant="outline-primary" onClick={handleClose}>

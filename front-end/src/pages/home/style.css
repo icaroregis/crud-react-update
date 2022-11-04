@@ -5,9 +5,16 @@
 }
 
 .clients {
-  margin-top: 5px; 
+  margin-top: 5px;  
   display: flex;
   justify-content: space-between;
+  margin-bottom: 30px; 
+}
+
+.section-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;  
 }
 
 .new-user-button {
@@ -30,4 +37,54 @@
   color: white;
   background: darkgreen;
   transform: scale(1.2);
+}
+
+.section-padrao {
+  align-items: center;
+  justify-content: space-between;
+  width: 25%; 
+  text-align: center;
+}
+
+.editar-button,
+.excluir-button {
+  width: 130px;
+  height: 40px;
+  background-color: transparent;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.excluir-button { 
+  border: 1px solid #ee5253;  
+  color: #ee5253;
+}
+
+.editar-button {
+  margin-right: 10px;
+  border: 1px solid #e29933;
+  color: #e29933;
+}
+
+.excluir-button:hover {
+  background-color: #ee5253;
+  color: white;  
+} 
+
+.editar-button:hover {
+  background-color: #e29933;
+  color: white
+} 
+
+.section-cadastroThree {
+  margin-top: 25px; 
+}
+
+.section-cadastroThree input {
+  border: 1px solid #8492a6;
+  border-radius: 5px;
+  display: block;
+  padding: 10px;
+  width: 300px;
+  margin-bottom: 10px;
 }
